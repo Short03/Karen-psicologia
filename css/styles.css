@@ -451,3 +451,14 @@ footer a  { color: var(--mint2); text-decoration: none; font-weight: 700; }
   .quien-features { align-items: flex-start; }
   .form-row { flex-direction: column; gap: 0; }
 }
+
+#testimonialContainer::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+#testimonialContainer {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}

@@ -138,3 +138,28 @@ if (track) {
   // Inicializar estado visual del carrusel
   updateCarousel();
 }
+
+/* ── Carrusel de Testimonios Avanzable ─────────── */
+const testiContainer = document.getElementById('testimonialContainer');
+const testiPrevBtn = document.getElementById('testiPrevBtn');
+const testiNextBtn = document.getElementById('testiNextBtn');
+
+if (testiContainer) {
+  // Botón Avanzar
+  if (testiNextBtn) {
+    testiNextBtn.addEventListener('click', () => {
+      // Tomamos el ancho de la primera tarjeta disponible para calcular el salto
+      const cardWidth = testiContainer.querySelector('.testimonial-card').offsetWidth;
+      // Sumamos 24 píxeles correspondientes al gap (gap-6) entre las tarjetas
+      testiContainer.scrollLeft += (cardWidth + 24);
+    });
+  }
+
+  // Botón Retroceder
+  if (testiPrevBtn) {
+    testiPrevBtn.addEventListener('click', () => {
+      const cardWidth = testiContainer.querySelector('.testimonial-card').offsetWidth;
+      testiContainer.scrollLeft -= (cardWidth + 24);
+    });
+  }
+}
