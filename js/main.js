@@ -70,3 +70,71 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = 'none';
   }
 });
+
+/* ── Carrusel de imágenes (Lado Derecho) ─────── */
+const track = document.getElementById('carouselTrack');
+
+// Verificamos que el carrusel exista en el HTML antes de ejecutar la lógica
+if (track) {
+  let currentIndex = 0;
+  const dots = document.querySelectorAll('.dot');
+  const totalSlides = track.children.length;
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Actualiza los puntitos blancos sobre la foto
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.remove('bg-white/50', 'w-2');
+        dot.classList.add('bg-white', 'w-4');
+      } else {
+        dot.classList.remove('bg-white', 'w-4');
+        dot.classList.add('bg-white/50', 'w-2');
+      }
+    });
+  }
+
+  // Eventos de botones (si existen)
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+      resetAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+      resetAutoPlay();
+    });
+  }
+
+  // Permitir saltar directo a una imagen desde los puntos
+  window.goToSlide = function(index) {
+    currentIndex = index;
+    updateCarousel();
+    resetAutoPlay();
+  };
+
+  // Desplazamiento automático cada 5 segundos
+  let autoPlayInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }, 5000);
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }, 5000);
+  }
+
+  // Inicializar estado visual del carrusel
+  updateCarousel();
+}

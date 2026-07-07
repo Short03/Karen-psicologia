@@ -41,19 +41,37 @@
           <a href="#quien" class="btn-outline">Conoce a la Lic.</a>
         </div>
       </div>
-      <div class="hero-img anim d3">
-        <div class="hero-card">
-          <div class="hero-img-placeholder">
-            <span>👩‍⚕️</span>
-            <p>Lic. Karen Castelan Jaques</p>
-            <p class="hero-img-role">Psicóloga Infantil &amp; Adolescentes</p>
-          </div>
-          <div class="hero-pill">
-            <div class="dot"></div>
-            Consultas presenciales y en línea
-          </div>
-        </div>
-      </div>
+      <div class="relative w-full max-w-md mx-auto aspect-square md:aspect-[4/5] rounded-3xl shadow-sm overflow-hidden border border-teal-100">
+  
+  <div id="carouselTrack" class="relative flex w-full h-full transition-transform duration-500 ease-in-out">
+    
+    <div class="w-full h-full flex-shrink-0">
+      <img src="img/psicologia.png" alt="Lic. Karen Castelan" class="w-full h-full object-cover">
+    </div>
+
+    <div class="w-full h-full flex-shrink-0">
+      <img src="img/psicologia-infantil.png" alt="Consultorio Infantil" class="w-full h-full object-cover">
+    </div>
+
+    <div class="w-full h-full flex-shrink-0">
+      <img src="img/psicologia-juvenil.png" alt="Terapia Psicológica" class="w-full h-full object-cover">
+    </div>
+
+  </div>
+
+  <button id="prevBtn" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
+    &#10094;
+  </button>
+  <button id="nextBtn" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
+    &#10095;
+  </button>
+
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-sm">
+    <button class="dot w-2 h-2 rounded-full bg-white transition-all duration-300" onclick="goToSlide(0)"></button>
+    <button class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(1)"></button>
+    <button class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(2)"></button>
+  </div>
+</div>
     </div>
   </section>
 
