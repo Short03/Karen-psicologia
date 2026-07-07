@@ -2,21 +2,28 @@
    CRECER FELIZ – main.js
    ============================================= */
 
-/* ── Formulario de contacto ─────────────────── */
-const btnEnviar = document.getElementById('btn-enviar');
-if (btnEnviar) {
-  btnEnviar.addEventListener('click', () => {
-    const nombre  = document.querySelector('input[type="text"]').value.trim();
-    const email   = document.querySelector('input[type="email"]').value.trim();
-    const mensaje = document.querySelector('textarea').value.trim();
+/* ── Formulario de contacto Real ─────────────────── */
+const formulario = document.getElementById('miFormulario');
 
+if (formulario) {
+  formulario.addEventListener('submit', function(event) {
+    // 1. Evitamos que se envíe a lo loco antes de revisar
+    event.preventDefault(); 
+
+    const nombre  = document.querySelector('input[name="nombre"]').value.trim();
+    const email   = document.querySelector('input[name="email"]').value.trim();
+    const mensaje = document.querySelector('textarea[name="mensaje"]').value.trim();
+
+    // 2. Validación básica
     if (!nombre || !email || !mensaje) {
       alert('Por favor completa los campos obligatorios: nombre, correo y mensaje.');
       return;
     }
 
-    // Aquí puedes conectar con EmailJS, Formspree, etc.
-    alert(`¡Gracias, ${nombre}! Hemos recibido tu mensaje. Te contactaremos pronto.`);
+    // 3. Si todo está correcto, enviamos el formulario formalmente
+    // Formspree se encargará de procesarlo, mandarte el correo y redireccionar al usuario
+    alert(`¡Gracias, ${nombre}! Procesando tu mensaje...`);
+    formulario.submit(); 
   });
 }
 
