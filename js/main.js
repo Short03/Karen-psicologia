@@ -163,3 +163,54 @@ if (testiContainer) {
     });
   }
 }
+
+
+/* ── Banner de Cookies y Google Analytics ─────────────────── */
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  // Si por alguna razón el banner no está en este HTML en específico, frenamos la ejecución
+  if (!banner || !acceptBtn || !rejectBtn) return;
+
+  // 1. Verificar si el usuario ya tomó una decisión en el pasado
+  const cookieDecision = localStorage.getItem("cookieConsent");
+
+  if (!cookieDecision) {
+    banner.style.display = "block"; // Mostrar el banner si es un usuario nuevo
+  } else if (cookieDecision === "accepted") {
+    cargarGoogleAnalytics(); // Cargar Analytics directamente si ya había aceptado antes
+  }
+
+  // 2. Acción al hacer clic en "Aceptar"
+  acceptBtn.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.style.display = "none";
+    cargarGoogleAnalytics(); // Activamos Google Analytics en ese mismo instante
+  });
+
+  // 3. Acción al hacer clic en "Rechazar"
+  rejectBtn.addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "rejected");
+    banner.style.display = "none";
+  });
+});
+
+// 4. Función que inyecta y arranca tu etiqueta oficial de Google Analytics
+function cargarGoogleAnalytics() {
+  // Inyecta el script externo de Google de forma asíncrona
+  const scriptGoogle = document.createElement('script');
+  scriptGoogle.async = true;
+  scriptGoogle.src = "https://www.googletagmanager.com/gtag/js?id=G-J727X8CHWP";
+  document.head.appendChild(scriptGoogle);
+
+  // Inicializa la configuración de tu ID de medición G-J727X8CHWP
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  
+  gtag('js', new Date());
+  gtag('config', 'G-J727X8CHWP');
+
+  console.log("Google Analytics G-J727X8CHWP cargado respetando la privacidad.");
+}
