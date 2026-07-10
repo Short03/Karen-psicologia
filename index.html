@@ -180,6 +180,48 @@
     <a href="https://wa.me/5518057365?text=%C2%A1Hola,%20buen%20d%C3%ADa!%0AMe%20interesa%20agendar%20una%20cita,%20me%20brindar%C3%ADas%20mayor%20informaci%C3%B3n..." class="btn-cta" target="_blank" rel="noopener noreferrer" aria-label="Agendar cita por WhatsApp">Agendar</a>
   </nav>
 
+  <main>
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge anim d1">✨ Psicología Infantil, Adolescentes &amp; Jóvenes</div>
+          <h1 class="hero-title anim d2">Un espacio para <em>crecer</em> y cuidar de tu salud mental</h1>
+          <p class="hero-desc anim d3">Acompañamiento emocional y desarrollo de habilidades cognitivas con métodos especializados, calidez y empatía.</p>
+          <div class="hero-btns anim d4">
+            <a href="#quien" class="btn-outline">Conoce a la Lic.</a>
+            <a href="#proceso" class="btn-primary">Proceso inicial</a>
+          </div>
+        </div>
+
+        <div class="relative w-full max-w-md mx-auto aspect-square md:aspect-[4/5] rounded-3xl shadow-sm overflow-hidden border border-teal-100">
+          <div id="carouselTrack" class="relative flex w-full h-full transition-transform duration-500 ease-in-out">
+            <div class="w-full h-full flex-shrink-0">
+              <img src="img/psicologia.png" alt="Lic. Karen Castelán Jaques en consultorio" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full h-full flex-shrink-0">
+              <img src="img/psicologia-infantil.png" alt="Espacio de psicología infantil" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full h-full flex-shrink-0">
+              <img src="img/psicologia-juvenil.png" alt="Terapia psicológica para adolescentes y jóvenes" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <button id="prevBtn" type="button" aria-label="Imagen anterior" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
+            &#10094;
+          </button>
+          <button id="nextBtn" type="button" aria-label="Imagen siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
+            &#10095;
+          </button>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-sm">
+            <button type="button" class="dot w-2 h-2 rounded-full bg-white transition-all duration-300" onclick="goToSlide(0)" aria-label="Ir a imagen 1"></button>
+            <button type="button" class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(1)" aria-label="Ir a imagen 2"></button>
+            <button type="button" class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(2)" aria-label="Ir a imagen 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   <section id="servicios">
       <div class="section-inner">
         <p class="section-tag">CÓMO PUEDO AYUDARTE</p>
@@ -285,47 +327,7 @@
       </div>
     </section>
 
-  <main>
-    <section id="hero">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <div class="hero-badge anim d1">✨ Psicología Infantil, Adolescentes &amp; Jóvenes</div>
-          <h1 class="hero-title anim d2">Un espacio para <em>crecer</em> y cuidar de tu salud mental</h1>
-          <p class="hero-desc anim d3">Acompañamiento emocional y desarrollo de habilidades cognitivas con métodos especializados, calidez y empatía.</p>
-          <div class="hero-btns anim d4">
-            <a href="#quien" class="btn-outline">Conoce a la Lic.</a>
-            <a href="#proceso" class="btn-primary">Proceso inicial</a>
-          </div>
-        </div>
-
-        <div class="relative w-full max-w-md mx-auto aspect-square md:aspect-[4/5] rounded-3xl shadow-sm overflow-hidden border border-teal-100">
-          <div id="carouselTrack" class="relative flex w-full h-full transition-transform duration-500 ease-in-out">
-            <div class="w-full h-full flex-shrink-0">
-              <img src="img/psicologia.png" alt="Lic. Karen Castelán Jaques en consultorio" class="w-full h-full object-cover">
-            </div>
-            <div class="w-full h-full flex-shrink-0">
-              <img src="img/psicologia-infantil.png" alt="Espacio de psicología infantil" class="w-full h-full object-cover">
-            </div>
-            <div class="w-full h-full flex-shrink-0">
-              <img src="img/psicologia-juvenil.png" alt="Terapia psicológica para adolescentes y jóvenes" class="w-full h-full object-cover">
-            </div>
-          </div>
-
-          <button id="prevBtn" type="button" aria-label="Imagen anterior" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
-            &#10094;
-          </button>
-          <button id="nextBtn" type="button" aria-label="Imagen siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/75 hover:bg-white text-slate-800 w-9 h-9 flex items-center justify-center rounded-full shadow-md transition-all focus:outline-none z-10">
-            &#10095;
-          </button>
-
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-sm">
-            <button type="button" class="dot w-2 h-2 rounded-full bg-white transition-all duration-300" onclick="goToSlide(0)" aria-label="Ir a imagen 1"></button>
-            <button type="button" class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(1)" aria-label="Ir a imagen 2"></button>
-            <button type="button" class="dot w-2 h-2 rounded-full bg-white/50 transition-all duration-300" onclick="goToSlide(2)" aria-label="Ir a imagen 3"></button>
-          </div>
-        </div>
-      </div>
-    </section>
+  
 
     <div id="stats">
       <div class="stats-inner">
