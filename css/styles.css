@@ -357,7 +357,7 @@ section { padding: 5rem 2rem; }
 .step-text { font-size: .88rem; color: #7a9a94; line-height: 1.6; }
 
 /* ── TESTIMONIOS ────────────────────────────── */
-#testimonios { background: var(--dark); }
+#testimonios  background: rgba(255, 255, 255, 0.08);
 #testimonios .section-title { color: #fff; }
 #testimonios .section-tag  { color: var(--mint2); }
 .testi-grid {
