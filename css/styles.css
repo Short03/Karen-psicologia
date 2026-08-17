@@ -100,13 +100,33 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
-.logo { display: flex; align-items: center; gap: .5rem; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
 .logo-icon { font-size: 1.8rem; }
-.logo-text { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--dark); line-height: 1.1; }
-.logo-sub  { font-size: .72rem; font-weight: 600; color: var(--mint); letter-spacing: .05em; white-space: nowrap; display: inline-block; }
+.logo-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--dark);
+  line-height: 1.1;
+}
+.logo-sub {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--mint);
+  letter-spacing: .04em;
+  line-height: 1.25;
+}
 .nav-links a { margin: 0 .9rem; font-weight: 700; font-size: .9rem; color: var(--dark); text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--mint); }
+.btn-cta { flex-shrink: 0; }
 
 /* ── HERO ───────────────────────────────────── */
 #hero {
@@ -229,7 +249,7 @@ section { padding: 5rem 2rem; }
   margin-top: 3rem;
 }
 .service-card {
-  display: flex; /* 👈 ¡Añade esto! */
+  display: flex;
   background: #fff;
   border-radius: 1.5rem;
   padding: 2rem 1.5rem;
@@ -242,28 +262,22 @@ section { padding: 5rem 2rem; }
   height: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  /* Nota: align-items: stretch; aquí adentro no es necesario, lo maneja el padre */
 }
 
-/* Asegura que el contenedor del icono tenga un tamaño fijo y centre lo que tenga dentro */
 .service-icon {
-  height: 45px; /* Ajusta este alto al tamaño de tus emojis */
+  height: 45px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* O center, dependiendo de cómo quieras alinearlos */
-  margin-bottom: 1rem; /* Espacio uniforme antes del título */
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
-/* Fuerza a que la imagen se adapte perfectamente al espacio reservado */
 .service-icon img {
   display: block;
   max-height: 100%;
   width: auto;
   object-fit: contain;
 }
-
-
-
 
 .service-card::after {
   content: '';
@@ -311,7 +325,15 @@ section { padding: 5rem 2rem; }
 }
 .quien-text { flex: 1; min-width: 280px; }
 .quien-name { font-family: 'Lora', serif; font-size: 2rem; color: var(--dark); font-weight: 600; margin: .8rem 0 .5rem; }
-.quien-role { color: var(--mint); font-weight: 800; font-size: .95rem; margin-bottom: 1rem; text-align: justify;}
+
+.quien-role {
+  color: var(--mint);
+  font-weight: 800;
+  font-size: clamp(.62rem, 3.3vw, .95rem);
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
 .quien-bio { color: #6a8a84; line-height: 1.8; font-size: 1rem; margin-bottom: 1rem;text-align: justify; }
 .quien-features { display: flex; flex-direction: column; gap: .7rem; }
 .quien-feat { display: flex; align-items: flex-start; gap: .7rem; font-size: .95rem; color: var(--body); font-weight: 600; }
@@ -334,7 +356,6 @@ section { padding: 5rem 2rem; }
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
-  
 }
 .step {
   background: #fff;
@@ -477,6 +498,37 @@ footer a  { color: var(--mint2); text-decoration: none; font-weight: 700; }
   .quien-img-wrap { flex: none; }
   .quien-features { align-items: flex-start; }
   .form-row { flex-direction: column; gap: 0; }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: .7rem 1rem;
+    gap: .5rem;
+  }
+
+  .logo {
+    gap: .5rem;
+  }
+
+  .logo img {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-size: .95rem;
+  }
+
+  .logo-sub {
+    font-size: .56rem;
+    letter-spacing: .02em;
+  }
+
+  .btn-cta {
+    padding: .45rem 1rem;
+    font-size: .82rem;
+  }
 }
 
 #testimonialContainer::-webkit-scrollbar {
